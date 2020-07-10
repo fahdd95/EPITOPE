@@ -7,15 +7,15 @@ console.log(lasturl);
 
 
 function readxmllist() {
-  var youtubecaplisturl = new XMLHttpRequest();
-  youtubecaplisturlyoutubecaplisturl.open("GET", "http://video.google.com/timedtext?type=list&v=wJnBTPUQS5A", true);
-  youtubecaplisturl.onreadystatechange = function () {
-     if (youtubecaplisturl.readyState == 4 && youtubecaplisturl.status == 200)
+  var caplistreq = new XMLHttpRequest();
+  caplistreq.open("GET", "http://video.google.com/timedtext?type=list&v=wJnBTPUQS5A", true);
+  caplistreq.onreadystatechange = function () {
+     if (caplistreq.readyState == 4 && caplistreq.status == 200)
      {
-          var doc = youtubecaplisturl.responseXML;
+          var doc = caplistreq.responseXML;
           console.log(doc.getElementById("0"));
 
      }
 };
-x.send(null);
+caplistreq.send(null);
 }
