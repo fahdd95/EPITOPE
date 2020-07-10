@@ -64,13 +64,18 @@
     
           <h1 class="mt-5" id="Header">Youtube Caption Downloader</h1>
           <br>
-             <!-- Youtube Link Input -->
-            <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="https://www.youtube.com/watch?v=kJQP7kiw5Fk" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-            <span class="input-group-text" id="basic-addon2">Youtube Link</span>
-            </div>
-            </div>
+          <!-- Youtube Link Input -->
+          <label for="basic-url">Put video ID from your video link</label>
+          <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon3">https://www.youtube.com/watch?v=</span>
+          </div>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="wJnBTPUQS5A">
+          </div>
+          
+          <!--Process-->
+            
+          <button id="getcap" onclick="captionlist()" type="button" class="btn btn-dark">Caption List</button>
             
         </div>
       </div>
@@ -80,6 +85,9 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!--JavaScript -->
+  <script src="JS/caption.js"></script>
 
 </body>
 
