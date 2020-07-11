@@ -1,14 +1,14 @@
+//this method will take your url and process it
 function captionlisturl(){  
 var youtubeurl = document.getElementById("basic-url").value;
 var lasturl = "http://video.google.com/timedtext?type=list&v=" + youtubeurl
 console.log(lasturl);
-
+return lasturl ;
 }
 
-
-function readxmllist() {
-  // XML Request and store the information in variable xmlcontent 
-
+// this method bring available lang for your youtube video 
+function bringlangcode(Captionlist) {
+  // XML Request and Show options on the user inteface
   var select;
   var opt;
   var xmlcontent;
@@ -17,7 +17,7 @@ function readxmllist() {
     
   //XMLHttpRequest  
   var caplistreq = new XMLHttpRequest();
-  caplistreq.open("GET", "http://video.google.com/timedtext?type=list&v=wJnBTPUQS5A", true);
+  caplistreq.open("GET",Captionlist,true);
   caplistreq.onreadystatechange = function () {
      if (caplistreq.readyState == 4 && caplistreq.status == 200)
      {
@@ -43,6 +43,52 @@ function readxmllist() {
           }
      }
 };
-caplistreq.send(null);
-    
+caplistreq.send(null);   
+}
+
+// this method show caption in the textarea and need google caption link
+function startpickcaption() {
+  //XMLHttpRequest 
+  var textarea = document.getElementById("captioncont");
+  var oldval;
+  var xmlcap;
+  var tagfilter;
+  var tagcount;
+  var alltext;
+  var captionreq = new XMLHttpRequest();
+  captionreq.open("GET","CaptionURL",true)
+  captionreq.onreadystatechange = function(){
+      
+     if(captionreq.readyState == 4 && captionreq.status == 200) {
+         
+        xmlcap = captionreq.responseXML;
+        tagfilter = xmlcap.getElementsByTagName('text');
+        tagcount = tagfilter.length;
+     
+        //console.log(tagcount);
+        //console.log(tagfilter);
+        
+        textarea.value = "" ;
+         
+        for(var i = 0; i < tagcount ; i++){
+            
+        alltext = tagfilter[i].textContent;        
+     
+         oldval =  textarea.value
+         textarea.value = oldval +"\n"+ alltext ;
+      
+       
+        }
+         
+     }
+      
+  };
+  captionreq.send(null);
+}
+
+
+function bringlist() {
+    console.log("lasturl");
+    var processedurl = captionlisturl();
+    //bringlangcode(processedurl);
 }
