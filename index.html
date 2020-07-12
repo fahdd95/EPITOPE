@@ -69,15 +69,14 @@
           <label for="basic-url" class="Lab" >Put video ID from your video link</label>
           <div class="input-group mb-3">
           <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon3">https://www.youtube.com/watch?v=</span>
+          <span class="input-group-text" id="basic-addon3">Youtube URL</span>
           </div>
-          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="wJnBTPUQS5A">
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="youtube.com/watch?v=wJnBTPUQS5A">
           </div>
           
           <!--Process-->
            <div>
-          <button id="getcap" onclick="bringlist()" type="button" class="btn btn-dark">Caption List</button>
-          <button type="button" class="btn btn-dark" onclick="readxmllist()">XML LIST</button>
+          <button id="getcap" onclick="bringlist()" type="button" class="btn btn-dark">Bring Available Languages</button>
            </div>
            <br>
             <!-- Lang List -->
@@ -88,7 +87,9 @@
             </div>
             
             <div class="form-group purple-border">
-                
+            <br>    
+            <button type="button" class="btn btn-dark" onclick="viewcaption()">Bring Caption</button> 
+            <br>
             <label  class="Lab" >Caption Content:</label>
                 
             <textarea id="captioncont" class="form-control"  rows="3" >

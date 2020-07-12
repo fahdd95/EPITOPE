@@ -1,10 +1,11 @@
-//this method will take your url and process it
+//this method will take your url and process it for list
 function captionlisturl(){  
 var youtubeurl = document.getElementById("basic-url").value;
-var lasturl = "http://video.google.com/timedtext?type=list&v=" + youtubeurl
+var lasturl = "http://video.google.com/timedtext?type=list&v=" + youtubeurl.split('=')[1];
 console.log(lasturl);
 return lasturl ;
 }
+
 
 // this method bring available lang for your youtube video 
 function bringlangcode(Captionlist) {
@@ -14,10 +15,11 @@ function bringlangcode(Captionlist) {
   var xmlcontent;
   var langlist
   var langcount 
+  var capurl = Captionlist ;
     
   //XMLHttpRequest  
   var caplistreq = new XMLHttpRequest();
-  caplistreq.open("GET",Captionlist,true);
+  caplistreq.open("GET",capurl,true);
   caplistreq.onreadystatechange = function () {
      if (caplistreq.readyState == 4 && caplistreq.status == 200)
      {
@@ -47,7 +49,8 @@ caplistreq.send(null);
 }
 
 // this method show caption in the textarea and need google caption link
-function startpickcaption() {
+function startpickcaption(Captionlist) {
+  var capurl = Captionlist ;
   //XMLHttpRequest 
   var textarea = document.getElementById("captioncont");
   var oldval;
@@ -56,7 +59,7 @@ function startpickcaption() {
   var tagcount;
   var alltext;
   var captionreq = new XMLHttpRequest();
-  captionreq.open("GET","CaptionURL",true)
+  captionreq.open("GET",capurl,true)
   captionreq.onreadystatechange = function(){
       
      if(captionreq.readyState == 4 && captionreq.status == 200) {
@@ -86,9 +89,26 @@ function startpickcaption() {
   captionreq.send(null);
 }
 
-
+// both linlk process and list view
 function bringlist() {
-    console.log("lasturl");
     var processedurl = captionlisturl();
-    //bringlangcode(processedurl);
+    bringlangcode(processedurl);
+}
+
+//this method will take your url and process it for caption veiw
+function captionurlprocess(){
+var sel = document.getElementById("sel1");
+var opt = sel.options[sel.selectedIndex];
+var optstr = opt.value;
+var youtubeurl = document.getElementById("basic-url").value;
+var lasturl = "https://video.google.com/timedtext?lang=" + optstr +"&v="+ youtubeurl.split('=')[1];
+console.log(lasturl);
+return lasturl ;
+}
+
+// both linlk process and caption view
+function viewcaption(){
+     var processedlinlk = captionurlprocess(); 
+     console.log(processedlinlk);
+     startpickcaption(processedlinlk);   
 }
