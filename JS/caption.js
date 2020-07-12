@@ -1,7 +1,24 @@
 //this method will take your url and process it for list
 function captionlisturl(){  
+var lasturl;
 var youtubeurl = document.getElementById("basic-url").value;
-var lasturl = "http://video.google.com/timedtext?type=list&v=" + youtubeurl.split('=')[1];
+var firstcopone = "https://youtu.be";
+var firstcoptwo = "youtu.be";
+var checkerone = youtubeurl.substr(0,16);
+var checkertwo = youtubeurl.substr(0,8); 
+console.log(checkerone);
+console.log(checkertwo);
+
+if (firstcopone == checkerone) {
+   lasturl = "http://video.google.com/timedtext?type=list&v=" + youtubeurl.substr(17);  
+    
+} 
+else if (firstcoptwo == checkertwo ) {
+   lasturl = "http://video.google.com/timedtext?type=list&v=" + youtubeurl.substr(9);   
+} 
+else {  
+lasturl = "http://video.google.com/timedtext?type=list&v=" + youtubeurl.split('=')[1];
+}
 console.log(lasturl);
 return lasturl ;
 }
@@ -97,11 +114,27 @@ function bringlist() {
 
 //this method will take your url and process it for caption veiw
 function captionurlprocess(){
+//bring video id
+var youtubeurl = document.getElementById("basic-url").value;
+var lasturl;
+var firstcopone = "https://youtu.be";
+var firstcoptwo = "youtu.be";
+var checkerone = youtubeurl.substr(0,16);
+var checkertwo = youtubeurl.substr(0,8); 
 var sel = document.getElementById("sel1");
 var opt = sel.options[sel.selectedIndex];
 var optstr = opt.value;
-var youtubeurl = document.getElementById("basic-url").value;
-var lasturl = "https://video.google.com/timedtext?lang=" + optstr +"&v="+ youtubeurl.split('=')[1];
+
+if (firstcopone == checkerone) {
+   lasturl = "https://video.google.com/timedtext?lang=" + optstr +"&v="+ youtubeurl.substr(17);    
+} 
+else if (firstcoptwo == checkertwo ) {
+    lasturl = "https://video.google.com/timedtext?lang=" + optstr +"&v="+ youtubeurl.substr(9);       
+} 
+else {  
+lasturl = "https://video.google.com/timedtext?lang=" + optstr +"&v="+ youtubeurl.split('=')[1];
+}
+
 console.log(lasturl);
 return lasturl ;
 }
