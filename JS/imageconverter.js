@@ -98,7 +98,7 @@ var JpgToPngConvertor = function() {
             if (document.getElementById("PikerControlSelect1").value.toLowerCase() == 'jpeg') {
                 pngFileName = jpgFileName.replace(/jpe?g/i, window.convertto);
             } else {
-                pngFileName = jpgFileName.replace(document.getElementById("exampleFormControlSelect1").value.toLowerCase(), window.convertto);
+                pngFileName = jpgFileName.replace(document.getElementById("PikerControlSelect1").value.toLowerCase(), window.convertto);
             }
             linkEl.setAttribute('download', pngFileName);
             linkEl.href = window.URL.createObjectURL(pngBlob);
