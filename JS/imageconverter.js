@@ -92,6 +92,7 @@ var JpgToPngConvertor = function() {
         }
 
         function updateDownloadLink(jpgFileName, pngBlob) {
+            console.log(pngBlob);
             console.log(jpgFileName);
             const linkEl = downloadLink;
             var pngFileName = "";
@@ -101,6 +102,7 @@ var JpgToPngConvertor = function() {
                 pngFileName = jpgFileName.replace(document.getElementById("PikerControlSelect1").value.toLowerCase(), window.convertto);
             }
             linkEl.setAttribute('download', pngFileName);
+            console.log(pngBlob);
             linkEl.href = window.URL.createObjectURL(pngBlob);
             console.log(pngBlob);
             // If there is custom download link we don't download automatically
@@ -128,7 +130,16 @@ var JpgToPngConvertor = function() {
                 canvas.height = e.target.height;
                 ctx.drawImage(e.target, 0, 0, e.target.width, e.target.height);
                 console.log('image/' + window.convertto);
-                canvas.toBlob(updateDownloadLink.bind(window, imageFileBlob.name), 'image/' + window.convertto, 1);
+        
+                if ('image/' + window.convertto == "image/ico"){
+                console.log("Add Here"+imageFileBlob.name);    
+                canvas.toBlob(updateDownloadLink.bind(window, imageFileBlob.name),'image/vnd.microsoft.icon','-moz-parse-options:format=bmp;bpp=256');    
+                    
+                } else { 
+                console.log("Here"+imageFileBlob.name);
+                canvas.toBlob(updateDownloadLink.bind(window, imageFileBlob.name), 'image/' + window.convertto, 1); 
+                }
+                
             };
             imageEl.src = imageUrl;
             if (settings.downloadEl) {
