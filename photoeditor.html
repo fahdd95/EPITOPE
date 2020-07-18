@@ -73,17 +73,20 @@
           <img src="images/picture.jpg" alt="Picture">
         </div>
       </div>
-      <div class="col-md-3" hidden>
+
           
           
         <!-- <h3>Preview:</h3> -->
         <div class="docs-preview clearfix" hidden>
           <div class="img-preview preview-lg"></div>
+            
         </div>
 
         <!-- <h3>Data:</h3> -->
-        <div class="docs-data"  hidden>
-          <div class="input-group input-group-sm">
+       
+        <div class="docs-data">
+            <br>
+          <div class="input-group input-group-sm" hidden>
             <span class="input-group-prepend">
               <label class="input-group-text" for="dataX">X</label>
             </span>
@@ -92,7 +95,7 @@
               <span class="input-group-text">px</span>
             </span>
           </div>
-          <div class="input-group input-group-sm">
+          <div class="input-group input-group-sm" hidden >
             <span class="input-group-prepend">
               <label class="input-group-text" for="dataY">Y</label>
             </span>
@@ -105,7 +108,7 @@
             <span class="input-group-prepend">
               <label class="input-group-text" for="dataWidth">Width</label>
             </span>
-            <input type="text" class="form-control" id="dataWidth" placeholder="width">
+            <input type="text" class="form-control" id="dataWidth" placeholder="width" readonly >
             <span class="input-group-append">
               <span class="input-group-text">px</span>
             </span>
@@ -114,7 +117,7 @@
             <span class="input-group-prepend">
               <label class="input-group-text" for="dataHeight">Height</label>
             </span>
-            <input type="text" class="form-control" id="dataHeight" placeholder="height">
+            <input type="text" class="form-control" id="dataHeight" placeholder="height" readonly>
             <span class="input-group-append">
               <span class="input-group-text">px</span>
             </span>
@@ -123,25 +126,25 @@
             <span class="input-group-prepend">
               <label class="input-group-text" for="dataRotate">Rotate</label>
             </span>
-            <input type="text" class="form-control" id="dataRotate" placeholder="rotate">
+            <input type="text" class="form-control" id="dataRotate" placeholder="rotate" readonly>
             <span class="input-group-append">
               <span class="input-group-text">deg</span>
             </span>
           </div>
-          <div class="input-group input-group-sm">
+          <div class="input-group input-group-sm" hidden>
             <span class="input-group-prepend">
               <label class="input-group-text" for="dataScaleX">ScaleX</label>
             </span>
             <input type="text" class="form-control" id="dataScaleX" placeholder="scaleX">
           </div>
-          <div class="input-group input-group-sm">
+          <div class="input-group input-group-sm" hidden>
             <span class="input-group-prepend">
               <label class="input-group-text" for="dataScaleY">ScaleY</label>
             </span>
             <input type="text" class="form-control" id="dataScaleY" placeholder="scaleY">
           </div>
         </div>
-      </div>
+    
     </div>
     <div class="row justify-content-center" id="actions">
       <div class="col-md-9 docs-buttons">
