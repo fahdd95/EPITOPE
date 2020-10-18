@@ -130,16 +130,16 @@ var JpgToPngConvertor = function() {
                 canvas.height = e.target.height;
                 ctx.drawImage(e.target, 0, 0, e.target.width, e.target.height);
                 console.log('image/' + window.convertto);
-        
+
                 if ('image/' + window.convertto == "image/ico"){
-                console.log("Add Here"+imageFileBlob.name);    
-                canvas.toBlob(updateDownloadLink.bind(window, imageFileBlob.name),'image/vnd.microsoft.icon','-moz-parse-options:format=bmp;bpp=256');    
-                    
+                    console.log("Add Here"+imageFileBlob.name);    
+                    canvas.toBlob(updateDownloadLink.bind(window, imageFileBlob.name),'image/vnd.microsoft.icon','-moz-parse-options:format=bmp;bpp=256');    
+
                 } else { 
-                console.log("Here"+imageFileBlob.name);
-                canvas.toBlob(updateDownloadLink.bind(window, imageFileBlob.name), 'image/' + window.convertto, 1); 
+                    console.log("Here"+imageFileBlob.name);
+                    canvas.toBlob(updateDownloadLink.bind(window, imageFileBlob.name), 'image/' + window.convertto, 1); 
                 }
-                
+
             };
             imageEl.src = imageUrl;
             if (settings.downloadEl) {
