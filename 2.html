@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>PhotoEditor</title>
+        <link rel="stylesheet" href="CSS/all.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="CSS/cropper.css">
+        <link rel="stylesheet" href="CSS/photoeditor.css">
+        <link rel="stylesheet" href="CSS/Main.css">
+    </head>
+
+
+    <body>
+        <!--  Navigation Bar section-->
+        <section>
+            <div id="navbar" class="navbar navbar-expand-sm bg-dark navbar-dark ">
+
+                <a class="navbar-brand" href="#">
+                    <img src="images/EpitopeW.png" alt="Logo" style="width:40px; height:40px">
+                </a>
+
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Youtube Caption Downloader</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Clicktotranslate.html">Ultimate Video Translator</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="AlfaGadgets.html">AlfaGadgets</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="ImageConvert.html">Image Converter</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="photoeditor.html">PhotoEditor</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="About.html">About</a>
+                        </li>
+                    </ul>
+                </div>     
+
+
+            </div>  
+
+
+
+
+        </section>
+
+
+
+        <!-- Content -->
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-9">
+                    <!-- <h3>Demo:</h3> -->
+                    <br>
+                    <div class="img-container">
+                        <img src="images/picture.jpg" alt="Picture">
+                    </div>
+                </div>
+
+
+
+                <!-- <h3>Preview:</h3> -->
+                <div class="docs-preview clearfix" hidden>
+                    <div class="img-preview preview-lg"></div>
+
+                </div>
+
+                <!-- <h3>Data:</h3> -->
+
+                <div class="docs-data">
+                    <br>
+                    <div class="input-group input-group-sm" hidden>
+                        <span class="input-group-prepend">
+                            <label class="input-group-text" for="dataX">X</label>
+                        </span>
+                        <input type="text" class="form-control" id="dataX" placeholder="x">
+                        <span class="input-group-append">
+                            <span class="input-group-text">px</span>
+                        </span>
+                    </div>
+                    <div class="input-group input-group-sm" hidden >
+                        <span class="input-group-prepend">
+                            <label class="input-group-text" for="dataY">Y</label>
+                        </span>
+                        <input type="text" class="form-control" id="dataY" placeholder="y">
+                        <span class="input-group-append">
+                            <span class="input-group-text">px</span>
+                        </span>
+                    </div>
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-prepend">
+                            <label class="input-group-text" for="dataWidth">Width</label>
+                        </span>
+                        <input type="text" class="form-control" id="dataWidth" placeholder="width" readonly >
+                        <span class="input-group-append">
+                            <span class="input-group-text">px</span>
+                        </span>
+                    </div>
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-prepend">
+                            <label class="input-group-text" for="dataHeight">Height</label>
+                        </span>
+                        <input type="text" class="form-control" id="dataHeight" placeholder="height" readonly>
+                        <span class="input-group-append">
+                            <span class="input-group-text">px</span>
+                        </span>
+                    </div>
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-prepend">
+                            <label class="input-group-text" for="dataRotate">Rotate</label>
+                        </span>
+                        <input type="text" class="form-control" id="dataRotate" placeholder="rotate" readonly>
+                        <span class="input-group-append">
+                            <span class="input-group-text">deg</span>
+                        </span>
+                    </div>
+                    <div class="input-group input-group-sm" hidden>
+                        <span class="input-group-prepend">
+                            <label class="input-group-text" for="dataScaleX">ScaleX</label>
+                        </span>
+                        <input type="text" class="form-control" id="dataScaleX" placeholder="scaleX">
+                    </div>
+                    <div class="input-group input-group-sm" hidden>
+                        <span class="input-group-prepend">
+                            <label class="input-group-text" for="dataScaleY">ScaleY</label>
+                        </span>
+                        <input type="text" class="form-control" id="dataScaleY" placeholder="scaleY">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-center" id="actions">
+                <div class="col-md-9 docs-buttons">
+                    <!-- <h3>Toolbar:</h3> -->
+
+
+
+
+                    <br>
+                    <div class="  docs-toggles  d-flex flex-row  justify-content-center">
+                        <!-- <h3>Toggles:</h3> -->
+                        <div class="btn-group  " data-toggle="buttons">
+
+                            <label class="btn btn-dark active">
+                                <input type="radio" class="sr-only" id="aspectRatio1" name="aspectRatio" value="1.7777777777777777">
+                                <span class="docs-tooltip" data-toggle="tooltip" title="16:9 aspectRatio">
+                                    16:9
+                                </span>
+                            </label>
+                            <label class="btn btn-dark">
+                                <input type="radio" class="sr-only" id="aspectRatio2" name="aspectRatio" value="1.3333333333333333">
+                                <span class="docs-tooltip" data-toggle="tooltip" title="4:3 aspectRatio">
+                                    4:3
+                                </span>
+                            </label>
+                            <label class="btn btn-dark">
+                                <input type="radio" class="sr-only" id="aspectRatio3" name="aspectRatio" value="1">
+                                <span class="docs-tooltip" data-toggle="tooltip" title="1:1 aspectRatio">
+                                    1:1
+                                </span>
+                            </label>
+                            <label class="btn btn-dark">
+                                <input type="radio" class="sr-only" id="aspectRatio4" name="aspectRatio" value="0.6666666666666666">
+                                <span class="docs-tooltip" data-toggle="tooltip" title="2:3 aspectRatio">
+                                    2:3
+                                </span>
+                            </label>
+                            <label class="btn btn-dark">
+                                <input type="radio" class="sr-only" id="aspectRatio5" name="aspectRatio" value="NaN">
+                                <span class="docs-tooltip" data-toggle="tooltip" title="No aspectRatio">
+                                    Free
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+
+
+
+                    <br>
+
+
+                    <div class="btn-group d-flex flex-row  justify-content-center">
+
+                        <label class="btn btn-dark btn-upload" for="inputImage" title="Upload image file">
+                            <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+                            Import     
+                        </label>
+                        <button type="button" class="btn btn-success" data-method="getCroppedCanvas">Save</button>
+                        <button type="button" class="btn btn-dark" data-method="reset" title="Reset">Reset</button>
+                    </div>
+
+                    <div class="btn-group d-flex flex-row  justify-content-center">
+                        <button type="button" class="btn btn-dark" data-method="rotate" data-option="1" title="Rotate Left">Rotate L</button>
+                        <button type="button" class="btn btn-dark" data-method="rotate" data-option="-1" title="Rotate Right">Rotete R</button>
+                        <button type="button" class="btn btn-dark" data-method="zoom" data-option="0.1" title="Zoom In">Zoom In</button>
+                        <button type="button" class="btn btn-dark" data-method="zoom" data-option="-0.1" title="Zoom Out">Zoom Out</button>
+                    </div>
+
+                    <div class="btn-group d-flex flex-row  justify-content-center">
+                        <button type="button" class="btn btn-dark" data-method="move" data-option="-10" data-second-option="0" >
+                            <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" >
+                                <span>Move L</span>
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn-dark" data-method="move" data-option="10" data-second-option="0" title="Move Right">
+                            <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" >
+                                <span>Move R</span>
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn-dark" data-method="move" data-option="0" data-second-option="-10" title="Move Up">
+                            <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" >
+                                <span>Move Up</span>
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn-dark" data-method="move" data-option="0" data-second-option="10" title="Move Down">
+                            <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" >
+                                <span>Move Down</span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="btn-group d-flex flex-row  justify-content-center ">
+                        <button type="button" class="btn btn-dark" data-method="scaleX" data-option="-1" title="Flip Horizontal">Flip H</button>
+                        <button type="button" class="btn btn-dark" data-method="scaleY" data-option="-1" title="Flip Vertical">Flip V</button>
+                        <button type="button" class="btn btn-dark" data-method="crop" title="Crop">Start Crop
+                        </button>
+                        <button type="button" class="btn btn-dark" data-method="clear" title="Clear">End Crop
+                        </button>
+                    </div>
+
+
+
+
+
+
+                    <!-- Show the cropped image in modal -->
+                    <div class="modal fade docs-cropped" id="getCroppedCanvasModal" role="dialog" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="getCroppedCanvasTitle">Cropped</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body"></div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <a class="btn btn-dark" id="download" href="javascript:void(0);" download="cropped.jpg">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.modal -->
+
+                </div><!-- /.docs-buttons -->
+
+
+
+            </div>
+        </div>
+        <br>
+        <div class="container ">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="form-group col"> 
+
+                        <h3 class="Labdark" >Photo Editor</h3>
+                        <p class="Labdark" >Powerful client side photo editor</p>
+
+                        <p class="Labdark" >feel free with use photo editor which work on client side to ensure your privacy.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="JS/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="JS/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="JS/cropper.js"></script>
+        <script src="JS/main.js"></script>
+    </body>
+</html>
